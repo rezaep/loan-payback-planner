@@ -35,12 +35,7 @@ class PlanGeneratorServiceIntegrationTest {
         List<PlanItem> actualPlanItems = generatorService.generatePaybackPlan(PlanRequestTestDataBuilder.DEFAULT_LOAN_AMOUNT
                 , PlanRequestTestDataBuilder.DEFAULT_INTEREST_RATE, DEFAULT_MONTH_COUNT, START_DATE);
 
-        for (int index = 0; index < DEFAULT_MONTH_COUNT; index++) {
-            PlanItem expectedPlanItem = expectedPlanItems.get(index);
-            PlanItem actualPlanItem = actualPlanItems.get(index);
-
-            assertThat(actualPlanItem).isEqualTo(expectedPlanItem);
-        }
+        assertThat(actualPlanItems).isEqualTo(expectedPlanItems);
     }
 
     @ParameterizedTest

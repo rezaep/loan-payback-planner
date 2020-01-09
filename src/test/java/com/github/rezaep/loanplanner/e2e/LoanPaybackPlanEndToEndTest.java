@@ -48,12 +48,7 @@ public class LoanPaybackPlanEndToEndTest {
 
         assertThat(actualPlanItems).hasSize(request.getDuration());
 
-        for (int index = 0; index < DEFAULT_MONTH_COUNT; index++) {
-            PlanResponseItem expectedPlanItem = expectedPlanItems.get(index);
-            PlanResponseItem actualPlanItem = actualPlanItems.get(index);
-
-            assertThat(actualPlanItem).isEqualTo(expectedPlanItem);
-        }
+        assertThat(actualPlanItems).isEqualTo(expectedPlanItems);
     }
 
     private List<PlanResponseItem> generatePlanForTwelveMonths() {
